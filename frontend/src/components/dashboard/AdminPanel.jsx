@@ -122,7 +122,7 @@ const AdminPanel = () => {
     // Injeta manualmente o CPF pois campos disabled não vão no FormData
     formData.cpf = cpfFuncForm;
     
-    // Correção: Na edição, o username é disabled e não é capturado no form. Injetamos ele de volta.
+    // Na edição, o username é disabled e não é capturado no form. Injetamos ele de volta.
     if (selectedFunc) {
       formData.username = selectedFunc.username;
     }
