@@ -57,7 +57,7 @@ const Pendencias = () => {
 
   useEffect(() => { fetchPendencias(); }, []);
 
-  // FILTRO ATUALIZADO: Agora usa o "totalDebito" (Tudo que foi faturado independente do vencimento)
+  // Usa o "totalDebito" (Tudo que foi faturado independente do vencimento)
   const sociosOrdenados = Array.isArray(sociosFinanceiro) ? [...sociosFinanceiro].sort((a, b) => {
     const devedorA = Math.max(0, (a.totalDebito || 0) - (a.saldoPago || 0));
     const devedorB = Math.max(0, (b.totalDebito || 0) - (b.saldoPago || 0));
@@ -119,7 +119,7 @@ const Pendencias = () => {
                 </tr>
             )}
             {sociosOrdenados.map((socio) => {
-              // ATUALIZADO: Agora subtrai o pago do total faturado geral
+              // Subtrai o pago do total faturado geral
               const saldoDevedorFinal = Math.max(0, (socio.totalDebito || 0) - (socio.saldoPago || 0));
               
               return (
